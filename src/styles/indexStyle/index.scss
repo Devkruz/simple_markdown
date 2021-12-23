@@ -1,0 +1,206 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css);
+
+$lightBlue:#3A9EC3;
+$darkBlue: #2C2F43;
+$blue: #2C86A8;
+$gray: #E1EBE1;
+$darkBrown: #8D868C;
+$brown: #C5B5AD;
+$peal: #768DDF;
+
+
+
+* {
+     box-sizing: border-box;  
+}
+
+
+@mixin flex($direction:row, $justify:center, $align:center) {
+     display: flex;
+     justify-content: $justify;
+     align-items: $align;
+     flex-direction: $direction;
+}
+
+body {
+    
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+     background:$lightBlue;
+    
+  }
+  
+
+  
+ 
+  .wrapper {
+       width: 100%;
+       height: 100vh;
+       @include flex(column);
+
+       .container {
+        position: relative;
+        width: 80%;
+        height: 90vh;
+        border-radius: .6em;
+        border: none;
+        overflow: hidden;
+        @include flex(row,flex-start,center );
+        ;
+       }
+      
+  }
+
+  #editor, #preview {
+       max-height: 100%;
+       min-height: 100%;
+       touch-action: none;
+       
+      
+     //   width: 50%;
+  }
+
+  #editor {
+     border-radius: .6em 0 0 .6em; 
+     resize: none;
+     outline: none;
+     border:none;
+     padding: 1em;
+     width: 200px;
+     background:$darkBlue;
+     color:$brown;
+     font-size: 0.875rem;
+     
+  }
+
+  #preview {
+     background:$gray;
+     color:$peal;
+     border-radius: 0em .6em .6em 0em; 
+     width: 500px;
+     padding: 0em 1em;
+     overflow-y: auto;
+  }
+ 
+  #preview::-webkit-scrollbar {
+     display: none;
+  }
+ 
+  #editor::-webkit-scrollbar {
+     display: none;
+  }
+  
+  .switch {
+       padding:.5em;
+       background: $darkBrown;
+       color: white;
+       border:none;
+       outline: none;
+
+  }
+
+  .switch-wrapper {
+    width: 80%;
+    @include flex(row,flex-start ,center);
+    display: none;
+    margin-bottom: .3em;
+
+    .switch {
+      padding:.5em 1em;
+      i {
+         margin-right: .5em;
+      }
+
+    }
+  }
+
+
+  @media (max-width:730px) {
+
+     #editor, #preview {
+         position: absolute;
+         top:0;
+         left: 0;
+         width: 100%; 
+     }
+
+     .switch-wrapper {
+       display: block;
+     }
+
+    
+   .editor-up {
+    z-index: 1;
+   }
+
+  }
+  
+
+
+  // styling markdown
+#preview {
+
+  blockquote {
+    border-left: 3px solid $brown;
+    color: $darkBlue ;
+    padding-left: .5em;
+    margin-left: 25px;
+  }
+
+   p > code {
+    padding: .3em;
+  }
+
+  code {
+    background: $darkBlue;
+    font-size: 0.875rem;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  pre {
+    display: block;
+    overflow: auto;
+    background: $darkBlue;
+    border-radius:4px ;
+    padding: 5px;
+    line-height: 1.2;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    border-bottom: 2px solid $darkBlue;
+    text-align: center;
+  }
+
+      table {
+        border-collapse: collapse;
+      }
+
+  td,
+  th {
+    border: 1px solid $darkBlue;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  img {
+    display: block;
+    max-width: 90%;
+    margin: 2em auto;
+  }
+
+  a {
+     color:deeppink;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  body {
+    font-size: 0.875rem;
+  }
+}
+

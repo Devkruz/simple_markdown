@@ -1,0 +1,159 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #3A9EC3;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.wrapper .container {
+  position: relative;
+  width: 80%;
+  height: 90vh;
+  border-radius: 0.6em;
+  border: none;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+#editor, #preview {
+  max-height: 100%;
+  min-height: 100%;
+  touch-action: none;
+}
+
+#editor {
+  border-radius: 0.6em 0 0 0.6em;
+  resize: none;
+  outline: none;
+  border: none;
+  padding: 1em;
+  width: 200px;
+  background: #2C2F43;
+  color: #C5B5AD;
+  font-size: 0.875rem;
+}
+
+#preview {
+  background: #E1EBE1;
+  color: #768DDF;
+  border-radius: 0em 0.6em 0.6em 0em;
+  width: 500px;
+  padding: 0em 1em;
+  overflow-y: auto;
+}
+
+#preview::-webkit-scrollbar {
+  display: none;
+}
+
+#editor::-webkit-scrollbar {
+  display: none;
+}
+
+.switch {
+  padding: 0.5em;
+  background: #8D868C;
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.switch-wrapper {
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  display: none;
+  margin-bottom: 0.3em;
+}
+.switch-wrapper .switch {
+  padding: 0.5em 1em;
+}
+.switch-wrapper .switch i {
+  margin-right: 0.5em;
+}
+
+@media (max-width: 730px) {
+  #editor, #preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .switch-wrapper {
+    display: block;
+  }
+
+  .editor-up {
+    z-index: 1;
+  }
+}
+#preview blockquote {
+  border-left: 3px solid #C5B5AD;
+  color: #2C2F43;
+  padding-left: 0.5em;
+  margin-left: 25px;
+}
+#preview p > code {
+  padding: 0.3em;
+}
+#preview code {
+  background: #2C2F43;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-style: italic;
+}
+#preview pre {
+  display: block;
+  overflow: auto;
+  background: #2C2F43;
+  border-radius: 4px;
+  padding: 5px;
+  line-height: 1.2;
+}
+#preview h1, #preview h2, #preview h3, #preview h4, #preview h5, #preview h6 {
+  border-bottom: 2px solid #2C2F43;
+  text-align: center;
+}
+#preview table {
+  border-collapse: collapse;
+}
+#preview td,
+#preview th {
+  border: 1px solid #2C2F43;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#preview img {
+  display: block;
+  max-width: 90%;
+  margin: 2em auto;
+}
+#preview a {
+  color: deeppink;
+}
+
+@media screen and (max-width: 420px) {
+  body {
+    font-size: 0.875rem;
+  }
+}/*# sourceMappingURL=index.css.map */
